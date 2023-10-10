@@ -48,7 +48,7 @@ body{
 }
 
 main {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +60,7 @@ h1{
     color:var(--color-background);
     border-radius: 1rem;
     background-color: transparent;
-    border: 2px solid black;
+    border: 2px solid hwb(0 0% 100%);
     margin: 0.2rem;
 }
 
