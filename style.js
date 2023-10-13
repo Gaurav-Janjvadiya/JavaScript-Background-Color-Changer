@@ -1,5 +1,5 @@
 let temp = false;
-
+let temp2 = true;
 
 //magic of event bubbling
 
@@ -56,22 +56,91 @@ document.body.addEventListener("click", (e) => {
     }
 
 
-    if (e.target === document.querySelector("button")) {
-        if (temp === true && document.querySelector(".one").style.display === "block") {
-            forChangeRgb();
+    if (e.target === document.querySelector(".response")) {
+        if(temp2 === true){
+            document.querySelector(".box").style.display = "flex";
+            document.querySelector(".ul").style.borderBottomLeftRadius = "0px";
+            temp2 = false;
+        }else{
+            document.querySelector(".box").style.display = "none";
+            document.querySelector(".ul").style.borderBottomLeftRadius = "10px";
+            temp2 = true;
         }
-        if (temp === true && document.querySelector(".two").style.display === "block") {
-            forChangHsl();
+    }
+
+    //for manu events
+
+    if (e.target === document.querySelector(".MRGB")) {
+        if (temp === false) {
+            document.querySelector(".one").style.display = "block";
+            temp = true;
+        } else {
+            document.querySelector(".one").style.display = "none";
+            temp = false;
         }
-        if (temp === true && document.querySelector(".three").style.display === "block") {
-            forChangHex();
+    }
+    else if (e.target === document.querySelector(".MHSL")) {
+        if (temp === false) {
+            document.querySelector(".two").style.display = "block";
+            temp = true;
+        } else {
+            document.querySelector(".two").style.display = "none";
+            temp = false;
         }
-        if (temp === true && document.querySelector(".four").style.display === "block") {
-            forChangHwb();
+    }
+    else if (e.target === document.querySelector(".MHex")) {
+        if (temp === false) {
+            document.querySelector(".three").style.display = "block";
+            temp = true;
+        } else {
+            document.querySelector(".three").style.display = "none";
+            temp = false;
         }
-        if (temp === true && document.querySelector(".five").style.display === "block") {
-            forChangeByName();
+    }
+    else if (e.target === document.querySelector(".MHWB")) {
+        if (temp === false) {
+            document.querySelector(".four").style.display = "block";
+            temp = true;
+        } else {
+            document.querySelector(".four").style.display = "none";
+            temp = false;
         }
+    }
+    else if (e.target === document.querySelector(".Mcolname")) {
+        if (temp === false) {
+            document.querySelector(".five").style.display = "block";
+            temp = true;
+        } else {
+            document.querySelector(".five").style.display = "none";
+            temp = false;
+        }
+    }
+    else {
+        if (e.target === document.querySelector("button")) {
+            deafault();
+        }
+    }
+    
+
+
+    
+
+        if (e.target === document.querySelector("button")) {
+            if (temp === true && document.querySelector(".one").style.display === "block") {
+                forChangeRgb();
+            }
+            if (temp === true && document.querySelector(".two").style.display === "block") {
+                forChangHsl();
+            }
+            if (temp === true && document.querySelector(".three").style.display === "block") {
+                forChangHex();
+            }
+            if (temp === true && document.querySelector(".four").style.display === "block") {
+                forChangHwb();
+            }
+            if (temp === true && document.querySelector(".five").style.display === "block") {
+                forChangeByName();
+            }
     }
 })
 
@@ -82,7 +151,6 @@ function forChangeRgb() {
     document.querySelector(".current-rgb-color").textContent = rgbColor;
     document.body.style.backgroundColor = document.querySelector(".current-rgb-color").textContent;
 }
-
 function forChangHsl() {
     const hslColor = `hsl(${Math.floor(Math.random() * 360)},${Math.floor(Math.random() * 100)}%,${Math.floor(Math.random() * 100)}%)`;
     document.querySelector(".current-hsl-color").textContent = hslColor;
@@ -105,11 +173,11 @@ function forChangeByName() {
     document.querySelector(".current-color").textContent = colors;
     document.body.style.backgroundColor = document.querySelector(".current-color").textContent;
 }
-
 function deafault() {
-    const dcolorArray = ["red", "blue", "green", "yellow", "orange", "pink", "white"];
+    const dcolorArray = ["red", "blue", "green", "yellow", "orange", "pink", "white"]
     const dcolors = dcolorArray[Math.floor(Math.random() * 7)];
     document.querySelector(".current-color").textContent = dcolors;
     document.body.style.backgroundColor = dcolors;
 }
+ 
 
