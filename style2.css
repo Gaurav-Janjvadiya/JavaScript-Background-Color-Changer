@@ -115,14 +115,14 @@ button:hover {
     .kk {
         height: 100%;
         width: 100%;
-        color: black;
+        color:black;
+        background-color: rgb(135, 245, 201);
         display: flex;
         box-shadow: none;
         flex-direction: column;
         justify-content: space-around;
         text-align: center;
         cursor: pointer;
-
     }
 
     .abc {
@@ -140,7 +140,7 @@ button:hover {
     .four,
     .five {
         display: none;
-        font-size: 0.8rem;
+        font-size: 1rem;
         width: 95%;
         padding: 1rem 2rem;
         margin: 0.2rem;

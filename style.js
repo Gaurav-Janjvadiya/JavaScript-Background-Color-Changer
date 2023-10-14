@@ -147,7 +147,7 @@ document.body.addEventListener("click", (e) => {
 })
 
 
-
+// All functions
 function forChangeRgb() {
     const rgbColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
     document.querySelector(".current-rgb-color").textContent = rgbColor;
