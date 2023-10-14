@@ -58,12 +58,14 @@ document.body.addEventListener("click", (e) => {
 
     if (e.target === document.querySelector(".response")) {
         if(temp2 === true){
-            document.querySelector(".box").style.display = "flex";
+            document.querySelector(".box").style.transform = 'translateX(0rem)';
             document.querySelector(".ul").style.borderBottomLeftRadius = "0px";
+            document.querySelector(".response").textContent = "X"
             temp2 = false;
         }else{
-            document.querySelector(".box").style.display = "none";
+            document.querySelector(".box").style.transform = 'translateX(-10rem)';
             document.querySelector(".ul").style.borderBottomLeftRadius = "10px";
+            document.querySelector(".response").textContent = "|||"
             temp2 = true;
         }
     }
@@ -162,7 +164,7 @@ function forChangHwb() {
     document.body.style.backgroundColor = document.querySelector(".current-hwb-color").textContent;
 }
 function forChangHex() {
-    const value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "a", "b", "c", "d", "e", "f"];
+    const value = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "A", "B", "C", "D", "E", "F"];
     const hexColor = `#${value[Math.floor(Math.random() * 16)]}${value[Math.floor(Math.random() * 16)]}${value[Math.floor(Math.random() * 16)]}${value[Math.floor(Math.random() * 16)]}${value[Math.floor(Math.random() * 16)]}${value[Math.floor(Math.random() * 16)]}`;
     document.querySelector(".current-hex-color").textContent = hexColor;
     document.body.style.backgroundColor = document.querySelector(".current-hex-color").textContent;
